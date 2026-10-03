@@ -1,12 +1,15 @@
-<div>
+<ExampleShell demo="Draw events">
     <ScheduleXCalendar calendarApp={calendarApp} />
-</div>
+</ExampleShell>
 
 <script lang="ts">
   import { ScheduleXCalendar } from '@schedule-x/svelte';
   import { createCalendar, createViewDay, createViewWeek, createViewMonthGrid } from '@schedule-x/calendar';
   import '@schedule-x/theme-default/dist/index.css';
   import {createDrawPlugin} from "@sx-premium/draw";
+  import ExampleShell from '$lib/ExampleShell.svelte';
+  import '../app.css';
+  import 'temporal-polyfill/global';
 
   const drawPlugin = $state(createDrawPlugin({
     onFinishDrawing: (event) => {
