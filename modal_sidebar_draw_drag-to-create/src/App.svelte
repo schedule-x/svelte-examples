@@ -1,6 +1,6 @@
-<div>
+<ExampleShell demo="Modal, sidebar, draw, and drag to create">
   <ScheduleXCalendar calendarApp={calendarApp} />
-</div>
+</ExampleShell>
 
 <script lang="ts">
   import { ScheduleXCalendar } from '@schedule-x/svelte';
@@ -15,6 +15,8 @@
   import '@sx-premium/drag-to-create/index.css'
   import {createDragToCreatePlugin} from "@sx-premium/drag-to-create";
   import {createDrawPlugin} from "@sx-premium/draw";
+  import ExampleShell from './ExampleShell.svelte';
+  import 'temporal-polyfill/global';
 
   const eventsService = $state(createEventsServicePlugin());
 
@@ -123,4 +125,3 @@
     }
   }))
 </script>
-
